@@ -1,0 +1,347 @@
+#noteItemList .item-star{
+    display: none!important;
+}
+#myTag{
+    display: none!important;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+}
+#page{
+    position: absolute;
+    font-size: 14px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+#leftNotebook {
+    position: absolute;
+    width: 170px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #CFCFCF;
+}
+.folderHeader {
+    height: 35px;
+    line-height: 35px;
+    background-color: #D5D6D7;
+    border: 1px solid #CFCFCF;
+    cursor: pointer;
+}
+.folderHeader span {
+    color: #000000;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.folderBody{
+    display: none;
+}
+
+#myStarredNotes li{
+    position: relative;
+    margin: 0;
+    height: 30px;
+    border-bottom: 1px dashed #DFDFDF;
+    line-height: 30px;
+}
+#myStarredNotes li:hover{
+    background-color: #F5F6F7;
+}
+#myStarredNotes li a{
+    padding-left: 20px;
+    line-height: 30px;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+#myStarredNotes .delete-star{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: #DFDFDF;
+    cursor: pointer;
+}
+#myStarredNotes .delete-star:hover{
+    color: #464C5E;
+}
+#notebookList{
+    display: block;
+}
+#notebookList li {
+    line-height: 30px;
+    border-bottom: 1px dashed #DFDFDF;
+    white-space: nowrap;
+}
+#notebookList li:hover {
+    background-color: #F5F6F7;
+}
+#notebookList li a{
+    height: 30px;
+    padding: 1px 3px 0 20px;
+    margin: 0;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+#notebookList li a span{
+    display: inline-block;
+
+}
+#noteAndEditor{
+    position: absolute;
+    left: 170px;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    
+}
+#noteList{
+    width: 245px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-right: 1px solid #e5e6e7;
+}
+#noteAndSort{
+    height: 36px;
+    position: relative;
+    background-color: #e5e6e7;
+    border: 1px solid #D5D6D7;
+}
+#myNotebookNavForListNav{
+    position: absolute;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    left: 80px;
+
+}
+#newMyNote{
+    position: absolute;
+    right: 3px;
+    line-height: 30px;
+    width: 45px;
+    height:30px;
+    cursor: pointer;
+    background-color: #F5F6F7;
+    border-radius: 10px;
+    text-align: center;
+    top: 3px;
+}
+#noteItemListWrap {
+    position: absolute;
+    top: 40px;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+}
+#noteItemList {
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 5px;
+}
+#noteItemList .item {
+    position: relative;
+    height: 70px;
+    background-color: #F5F6F7;
+    overflow: hidden;
+    border: 1px solid #DFDFDF;
+    margin-top: 5px; 
+    cursor: default;
+    margin-right: 3px;
+    border-radius: 10px;
+}
+#noteItemList .item:hover{
+    background-color: #EAEBEC;
+}
+#noteItemList .item-options {
+    position: absolute;
+    font-size: 10px;
+    text-align: right;
+    right:1px;
+    bottom: 0;
+    z-index: 10;
+}
+#noteItemList .item-star, 
+#noteItemList .item-del{
+    opacity: .6;
+    width: 20px;
+    height: 18px;
+    display: none;
+    background-color: #464C5E;
+    cursor: pointer;
+    margin-left: 3px;
+    color: #FFFFFF;
+    border-radius: 6px;
+}
+#noteItemList .item-options .img-star{
+    background: url('../img/stars-white.png') no-repeat;
+    display: inline-block;
+    background-size: 80%;
+    width: 17px;
+    height: 18px;   
+    vertical-align: middle;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+#noteItemList .item-options .img-del {
+    background: url('../img/delete.png') no-repeat;
+    display: inline-block;
+    background-size: 80%;
+    width: 17px;
+    height: 18px;
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+#noteItemList .item:hover .item-star,
+#noteItemList .item:hover .item-del {
+    display: inline-block;
+}
+#noteItemList .item-star:hover,
+#noteItemList .item-del:hover {
+    opacity: .8;
+}
+#noteItemList .item-desc {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    right: 0;
+}
+#noteItemList .item-title {
+    font-size: 16px;
+    height: 22px;
+    line-height: 20px;
+    overflow: hidden;
+    border-bottom: 1px dashed #8b8b8b;
+}
+#noteItemList .item-info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:#5a5a5a;
+    font-size: 12px;
+}
+#noteItemList .img-book,
+.img-clock {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    color: red;
+}
+#noteItemList .desc{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#note{
+    left: 246px;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+#noteTop{
+    position: relative;
+    height: 36px;
+    border: 1px solid #DFDFDF;
+}
+#noteTitleDiv{
+    position: absolute;
+    left: 0;
+    right: 140px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+}
+#noteTitle{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+}
+#editorTool{
+    float: right;
+}
+#editorTool li{
+    display: inline-block;
+}
+
+#editorTool li a{
+    display: inline-block;
+    padding: 0 10px 0 5px;
+    height: 30px;
+    vertical-align: middle;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 3px;
+    margin-right:3px;
+    background-color: #F5F5F7;
+}
+
+#editor{
+    display: block;
+    position: absolute;
+    top:36px;
+    right: 0;
+    left: 0;
+    bottom: 30px;
+}
+#mceToolbar{
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f5f6f7;
+    line-height: 30px;
+    padding-left: 10px;
+}
+#mceToolbarContainer{
+    display: none;
+}
+#mceToolbarContainer .now-time,
+#infoToolbar .created-time,
+#infoToolbar .updateed-time {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#editorContent{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+
+    padding-left: 5px;
+    outline: 0;
+    margin-top: 5px;
+    bottom: 5px;
+}
+#editorContent p{
+    margin: 0 0 .3em;
+    font-size: 16px;
+    height: 100%;
+}
+#editorContent textarea{
+    width:100%!important;
+    font-size: 16px;
+    border:none;
+    height: 100%;
+    font-family: auto;
+}

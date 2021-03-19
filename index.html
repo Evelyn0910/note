@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>note</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div id="page">
+        <!-- 最左部分 -->
+        <div id="leftNotebook">
+            <!-- 笔记本 -->
+            <div class="folderNote closed" id="myStarredNotes" >
+                <div class="folderHeader">
+                    <span class="lang"> 加星笔记</span>
+                </div>
+                <ul class="folderBody" id="starNotes">
+                    <li><a id="noteid_1">bj</a><span class="delete-star" title="Remove">X</span></li>
+                    <li><a id="noteid_2">bjbj</a><span class="delete-star" title="Remove">X</span></li>
+                </ul>
+            </div>
+
+            <!-- 笔记本 -->
+            <div class="folderNote opened" id="myNotebooks">
+                <div class="folderHeader">
+                    <span class="lang">笔记本</span>
+                    <div class="pull-right" id="addNotebookPlus">
+                        <i class="fa-plus"title="Add notebook"></i>
+                    </div>
+                </div>
+                <ul class="folderBody" id="notebookList">
+                    <li><a id="notebook_default"><span>default</span></a></li>
+                    <li><a id="notebook_study"><span>study</span></a></li>
+                    <li><a id="notebook_work"><span>work</span></a></li>
+                </ul>
+            </div>
+
+            <!-- 标签 -->
+            <div class="folderNote closed" id="myTag">
+                <div class="folderHeader">
+                    <span class="lang"> 标签</span>
+                </div>
+                <ul class="folderBody" id="tagNav"></ul>
+            </div>
+        </div>
+
+        <div></div>
+
+        <!-- 列表部分 -->
+        <div id="noteAndEditor">
+            <div id="noteList">
+                <div id="noteAndSort">
+                    <div id="myNotebookNavForListNav">
+                        <span class="lang">newest笔记</span>
+                    </div>
+                    <div id="newMyNote">
+                        <a id="newNoteBtn">
+                            <span class="s-lang">新建</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- 搜索框 -->
+                <!-- <form action=""></form> -->
+                <div id="noteItemListWrap">
+                    <ul id="noteItemList">
+                        <li class="item">
+                            <div class="item-options">
+                                <div class="item-star">
+                                    <i class="img-star" title="加星"></i>
+                                </div>
+                                <div class="item-del">
+                                    <i class="img-del" title="删除"></i>
+                                </div>
+                            </div>
+                            <div class="item-desc">
+                                <p class="item-title">无标题</p>
+                                <p class="item-info">
+                                    <i class="img-book"></i>
+                                    <span class="note-notebook">学习</span>
+                                    <i class="img-clock"></i>
+                                    <span class="updated-time">2021-01-07 23:58:36</span>
+                                </p>
+                                <p class="desc">xxxxx</p>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-options">
+                                <div class="item-star">
+                                    <i class="img-star" title="加星">x</i>
+                                </div>
+                                <div class="item-del">
+                                    <i class="img-del" title="删除">x</i>
+                                </div>
+                            </div>
+                            <div class="item-desc">
+                                <p class="item-title">无标题</p>
+                                <p class="item-info">
+                                    <i class="img-book"></i>
+                                    <span class="note-notebook">学习</span>
+                                    <i class="img-clock"></i>
+                                    <!-- 后期如果添加了显示更新时间，这里需修改为created-time -->
+                                    <span class="crted-time">2021-01-07 23:58:36</span>
+                                </p>
+                                <p class="desc">xxxxx</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div></div>
+            <!-- 查看与编辑 -->
+            <div id="note">
+                <div id="noteTop">
+                    <div id="noteTitleDiv">
+                        <input name="noteTitle" id="noteTitle" placeholder="无标题">
+                    </div>
+                    <ul id="editorTool">
+                        <li>
+                            <a id="editBtn"><span class="s-lang">编辑</span></a>
+                            <!-- <a id="editSureBtn"><span class="s-lang" onclick="keepsure()">确定</span></a> -->
+                        </li>
+                        <li><a id="editDel"><span class="s-lang">删除</span></a></li>
+                    </ul>
+                </div>
+                <div id="editor">
+                    <div id="mceToolbar">
+                        <!-- 新建或编辑时的bar -->
+                        <div id="mceToolbarContainer">
+                            <span class="lang">时间</span>: <span class="now-time"></span>
+                        </div>
+                        <!-- 查看时的bar -->
+                        <div id="infoToolbar">
+                            <span class="lang">创建</span>: <span class="created-time">2015-04-03</span>
+                            <span class="lang">更新</span>: <span class="updated-time">2015-05-01</span>
+                        </div>
+                    </div>
+                    <div id="editorContentWrap" >
+                        <div id="editorContent" tabindex="2">
+                            <p>这里是笔记</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="nonote">暂时没有笔记哦，请点击左侧按钮新建一个笔记吧！</div>
+                <!-- markdown输入框 -->
+                <!-- <div id="mdEditor"></div> -->
+                <!-- 添加标签框 -->
+                <!-- <div id="editorBottom"></div> -->
+            </div>
+        </div>
+    </div>
+    <script>window.$ = window.jQuery = require('./lib/jquery.min.js');</script>
+    <script>
+        //let ls = localStorage.getItem('newest')
+        //let dt = JSON.parse(ls)
+        //let dtkey = dt.length - 1
+        //$('#editorTool li:first').html('<a id="editBtn" onclick="newNote(\'newest_' + dtkey + '\')"><span class="s-lang">编辑</span></a>')
+        //$('#noteTitle').val(dt[dtkey].title)
+        //$('#editorContent').html('<p>' + dt[dtkey].note + '</p')
+        //$('.created-time').text(dt[dtkey].time)
+        //$('.updated-time').text('')
+
+    </script>
+    <script src="render/index.js"></script>
+</body>
+</html>
